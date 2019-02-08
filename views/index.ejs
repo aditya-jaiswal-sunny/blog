@@ -1,0 +1,17 @@
+<% include partials/head %>
+<body>
+  <h1 class="title">Simple Blog using NodeJs</h1>
+  <h5 class="author"> by Aditya Jaiswal (Sunny)</h5>
+  <% include partials/nav %>
+  <div class="container">
+    <% posts.forEach( post => { %>
+    <a href="article/<%= post.title %>">
+       <div class="post">
+        <h1 class="post-title"><%= post.title %></h1>
+        <p class="post-prev"><%= post.content  %>...</p>
+       </div>
+     </a>
+    <% }); %>
+  </div>
+</body>
+</html>

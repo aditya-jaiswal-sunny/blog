@@ -1,0 +1,32 @@
+<% include partials/head %>
+<body>
+  <% include partials/nav %>
+  <div class="container">
+    <h1 class="article-title"><%= post.title %></h1>
+    <h4 class="article-date"><%= post.time %></h4>
+    <h5 class="author"> by <%= post.creator %></h5>
+    <div class="article-content-wrapper">
+      <p class="article-content"><%= post.content %></p>
+    </div>
+  </div>
+  <div class="like-content">
+  
+  <span>
+    Did you like this review? Press like to make it easier for others to see
+  </span>
+  
+  <button class="btn-secondary like-review">
+    <i class="fa fa-heart" aria-hidden="true"></i> Like
+  </button>
+  
+</div>
+<script>
+  $(function(){
+  $(document).one('click', '.like-review', function(e) {
+    $(this).html('<i class="fa fa-heart" aria-hidden="true"></i> You liked this');
+    $(this).children('.fa-heart').addClass('animate-like');
+  });
+});
+</script>
+</body>
+</html>
